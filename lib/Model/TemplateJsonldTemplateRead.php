@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationEntryJsonldConfigurationRead
+ * TemplateJsonldTemplateRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RendererService\ObjectSerializer;
 
 /**
- * ConfigurationEntryJsonldConfigurationRead Class Doc Comment
+ * TemplateJsonldTemplateRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RendererService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, ArrayAccess
+class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ConfigurationEntry:jsonld-configuration:read';
+    protected static $swaggerModelName = 'Template:jsonld-TemplateRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
-'uuid' => 'string',
+'file_name' => 'string',
+'original_file_name' => 'string',
+'file_type' => 'string',
+'file_size' => 'float',
+'content_url' => 'string',
+'template_code' => 'string',
+'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
-'key' => 'string',
-'sub_key' => 'string',
-'value' => 'string',
-'application_id' => 'string'    ];
+'uuid' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,13 +79,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         'context' => null,
 'id' => null,
 'type' => null,
-'uuid' => 'uuid',
+'file_name' => null,
+'original_file_name' => null,
+'file_type' => null,
+'file_size' => null,
+'content_url' => null,
+'template_code' => null,
+'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
-'key' => null,
-'sub_key' => null,
-'value' => null,
-'application_id' => null    ];
+'uuid' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,13 +120,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
-'uuid' => 'uuid',
+'file_name' => 'fileName',
+'original_file_name' => 'originalFileName',
+'file_type' => 'fileType',
+'file_size' => 'fileSize',
+'content_url' => 'contentUrl',
+'template_code' => 'templateCode',
+'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
-'key' => 'key',
-'sub_key' => 'subKey',
-'value' => 'value',
-'application_id' => 'applicationId'    ];
+'uuid' => 'uuid'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -131,13 +140,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
-'uuid' => 'setUuid',
+'file_name' => 'setFileName',
+'original_file_name' => 'setOriginalFileName',
+'file_type' => 'setFileType',
+'file_size' => 'setFileSize',
+'content_url' => 'setContentUrl',
+'template_code' => 'setTemplateCode',
+'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
-'key' => 'setKey',
-'sub_key' => 'setSubKey',
-'value' => 'setValue',
-'application_id' => 'setApplicationId'    ];
+'uuid' => 'setUuid'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -148,13 +160,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
-'uuid' => 'getUuid',
+'file_name' => 'getFileName',
+'original_file_name' => 'getOriginalFileName',
+'file_type' => 'getFileType',
+'file_size' => 'getFileSize',
+'content_url' => 'getContentUrl',
+'template_code' => 'getTemplateCode',
+'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
-'key' => 'getKey',
-'sub_key' => 'getSubKey',
-'value' => 'getValue',
-'application_id' => 'getApplicationId'    ];
+'uuid' => 'getUuid'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -217,13 +232,16 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['original_file_name'] = isset($data['original_file_name']) ? $data['original_file_name'] : null;
+        $this->container['file_type'] = isset($data['file_type']) ? $data['file_type'] : null;
+        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
+        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
+        $this->container['template_code'] = isset($data['template_code']) ? $data['template_code'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['sub_key'] = isset($data['sub_key']) ? $data['sub_key'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
     }
 
     /**
@@ -235,9 +253,6 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,25 +341,169 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
     }
 
     /**
-     * Gets uuid
+     * Gets file_name
      *
      * @return string
      */
-    public function getUuid()
+    public function getFileName()
     {
-        return $this->container['uuid'];
+        return $this->container['file_name'];
     }
 
     /**
-     * Sets uuid
+     * Sets file_name
      *
-     * @param string $uuid uuid
+     * @param string $file_name file_name
      *
      * @return $this
      */
-    public function setUuid($uuid)
+    public function setFileName($file_name)
     {
-        $this->container['uuid'] = $uuid;
+        $this->container['file_name'] = $file_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets original_file_name
+     *
+     * @return string
+     */
+    public function getOriginalFileName()
+    {
+        return $this->container['original_file_name'];
+    }
+
+    /**
+     * Sets original_file_name
+     *
+     * @param string $original_file_name original_file_name
+     *
+     * @return $this
+     */
+    public function setOriginalFileName($original_file_name)
+    {
+        $this->container['original_file_name'] = $original_file_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_type
+     *
+     * @return string
+     */
+    public function getFileType()
+    {
+        return $this->container['file_type'];
+    }
+
+    /**
+     * Sets file_type
+     *
+     * @param string $file_type file_type
+     *
+     * @return $this
+     */
+    public function setFileType($file_type)
+    {
+        $this->container['file_type'] = $file_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_size
+     *
+     * @return float
+     */
+    public function getFileSize()
+    {
+        return $this->container['file_size'];
+    }
+
+    /**
+     * Sets file_size
+     *
+     * @param float $file_size file_size
+     *
+     * @return $this
+     */
+    public function setFileSize($file_size)
+    {
+        $this->container['file_size'] = $file_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_url
+     *
+     * @return string
+     */
+    public function getContentUrl()
+    {
+        return $this->container['content_url'];
+    }
+
+    /**
+     * Sets content_url
+     *
+     * @param string $content_url content_url
+     *
+     * @return $this
+     */
+    public function setContentUrl($content_url)
+    {
+        $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets template_code
+     *
+     * @return string
+     */
+    public function getTemplateCode()
+    {
+        return $this->container['template_code'];
+    }
+
+    /**
+     * Sets template_code
+     *
+     * @param string $template_code template_code
+     *
+     * @return $this
+     */
+    public function setTemplateCode($template_code)
+    {
+        $this->container['template_code'] = $template_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }
@@ -398,97 +557,25 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
     }
 
     /**
-     * Gets key
+     * Gets uuid
      *
      * @return string
      */
-    public function getKey()
+    public function getUuid()
     {
-        return $this->container['key'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets key
+     * Sets uuid
      *
-     * @param string $key key
+     * @param string $uuid uuid
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setUuid($uuid)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets sub_key
-     *
-     * @return string
-     */
-    public function getSubKey()
-    {
-        return $this->container['sub_key'];
-    }
-
-    /**
-     * Sets sub_key
-     *
-     * @param string $sub_key sub_key
-     *
-     * @return $this
-     */
-    public function setSubKey($sub_key)
-    {
-        $this->container['sub_key'] = $sub_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string $value value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_id
-     *
-     * @return string
-     */
-    public function getApplicationId()
-    {
-        return $this->container['application_id'];
-    }
-
-    /**
-     * Sets application_id
-     *
-     * @param string $application_id application_id
-     *
-     * @return $this
-     */
-    public function setApplicationId($application_id)
-    {
-        $this->container['application_id'] = $application_id;
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }

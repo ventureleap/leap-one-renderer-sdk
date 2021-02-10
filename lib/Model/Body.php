@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse200
+ * Body
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RendererService\ObjectSerializer;
 
 /**
- * InlineResponse200 Class Doc Comment
+ * Body Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RendererService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse200 implements ModelInterface, ArrayAccess
+class Body implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200';
+    protected static $swaggerModelName = 'body';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hydramember' => '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[]',
-'hydratotal_items' => 'int',
-'hydraview' => '\VentureLeap\RendererService\Model\InlineResponse200Hydraview',
-'hydrasearch' => '\VentureLeap\RendererService\Model\InlineResponse200Hydrasearch'    ];
+        'file' => 'string',
+'original_file_name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,10 +65,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'hydramember' => null,
-'hydratotal_items' => null,
-'hydraview' => null,
-'hydrasearch' => null    ];
+        'file' => 'binary',
+'original_file_name' => 'string'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,10 +95,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'hydramember' => 'hydra:member',
-'hydratotal_items' => 'hydra:totalItems',
-'hydraview' => 'hydra:view',
-'hydrasearch' => 'hydra:search'    ];
+        'file' => 'file',
+'original_file_name' => 'originalFileName'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -110,10 +104,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'hydramember' => 'setHydramember',
-'hydratotal_items' => 'setHydratotalItems',
-'hydraview' => 'setHydraview',
-'hydrasearch' => 'setHydrasearch'    ];
+        'file' => 'setFile',
+'original_file_name' => 'setOriginalFileName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -121,10 +113,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'hydramember' => 'getHydramember',
-'hydratotal_items' => 'getHydratotalItems',
-'hydraview' => 'getHydraview',
-'hydrasearch' => 'getHydrasearch'    ];
+        'file' => 'getFile',
+'original_file_name' => 'getOriginalFileName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -184,10 +174,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hydramember'] = isset($data['hydramember']) ? $data['hydramember'] : null;
-        $this->container['hydratotal_items'] = isset($data['hydratotal_items']) ? $data['hydratotal_items'] : null;
-        $this->container['hydraview'] = isset($data['hydraview']) ? $data['hydraview'] : null;
-        $this->container['hydrasearch'] = isset($data['hydrasearch']) ? $data['hydrasearch'] : null;
+        $this->container['file'] = isset($data['file']) ? $data['file'] : null;
+        $this->container['original_file_name'] = isset($data['original_file_name']) ? $data['original_file_name'] : null;
     }
 
     /**
@@ -199,9 +187,6 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['hydramember'] === null) {
-            $invalidProperties[] = "'hydramember' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -218,97 +203,49 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets hydramember
+     * Gets file
      *
-     * @return \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[]
+     * @return string
      */
-    public function getHydramember()
+    public function getFile()
     {
-        return $this->container['hydramember'];
+        return $this->container['file'];
     }
 
     /**
-     * Sets hydramember
+     * Sets file
      *
-     * @param \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[] $hydramember hydramember
+     * @param string $file file
      *
      * @return $this
      */
-    public function setHydramember($hydramember)
+    public function setFile($file)
     {
-        $this->container['hydramember'] = $hydramember;
+        $this->container['file'] = $file;
 
         return $this;
     }
 
     /**
-     * Gets hydratotal_items
+     * Gets original_file_name
      *
-     * @return int
+     * @return string
      */
-    public function getHydratotalItems()
+    public function getOriginalFileName()
     {
-        return $this->container['hydratotal_items'];
+        return $this->container['original_file_name'];
     }
 
     /**
-     * Sets hydratotal_items
+     * Sets original_file_name
      *
-     * @param int $hydratotal_items hydratotal_items
+     * @param string $original_file_name original_file_name
      *
      * @return $this
      */
-    public function setHydratotalItems($hydratotal_items)
+    public function setOriginalFileName($original_file_name)
     {
-        $this->container['hydratotal_items'] = $hydratotal_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets hydraview
-     *
-     * @return \VentureLeap\RendererService\Model\InlineResponse200Hydraview
-     */
-    public function getHydraview()
-    {
-        return $this->container['hydraview'];
-    }
-
-    /**
-     * Sets hydraview
-     *
-     * @param \VentureLeap\RendererService\Model\InlineResponse200Hydraview $hydraview hydraview
-     *
-     * @return $this
-     */
-    public function setHydraview($hydraview)
-    {
-        $this->container['hydraview'] = $hydraview;
-
-        return $this;
-    }
-
-    /**
-     * Gets hydrasearch
-     *
-     * @return \VentureLeap\RendererService\Model\InlineResponse200Hydrasearch
-     */
-    public function getHydrasearch()
-    {
-        return $this->container['hydrasearch'];
-    }
-
-    /**
-     * Sets hydrasearch
-     *
-     * @param \VentureLeap\RendererService\Model\InlineResponse200Hydrasearch $hydrasearch hydrasearch
-     *
-     * @return $this
-     */
-    public function setHydrasearch($hydrasearch)
-    {
-        $this->container['hydrasearch'] = $hydrasearch;
+        $this->container['original_file_name'] = $original_file_name;
 
         return $this;
     }

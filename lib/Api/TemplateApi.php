@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationEntryApi
+ * TemplateApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use VentureLeap\RendererService\HeaderSelector;
 use VentureLeap\RendererService\ObjectSerializer;
 
 /**
- * ConfigurationEntryApi Class Doc Comment
+ * TemplateApi Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RendererService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ConfigurationEntryApi
+class TemplateApi
 {
     /**
      * @var ClientInterface
@@ -87,9 +87,9 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation deleteConfigurationEntryItem
+     * Operation deleteTemplateItem
      *
-     * Removes the ConfigurationEntry resource.
+     * Removes the Template resource.
      *
      * @param  string $id id (required)
      *
@@ -97,15 +97,15 @@ class ConfigurationEntryApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteConfigurationEntryItem($id)
+    public function deleteTemplateItem($id)
     {
-        $this->deleteConfigurationEntryItemWithHttpInfo($id);
+        $this->deleteTemplateItemWithHttpInfo($id);
     }
 
     /**
-     * Operation deleteConfigurationEntryItemWithHttpInfo
+     * Operation deleteTemplateItemWithHttpInfo
      *
-     * Removes the ConfigurationEntry resource.
+     * Removes the Template resource.
      *
      * @param  string $id (required)
      *
@@ -113,10 +113,10 @@ class ConfigurationEntryApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteConfigurationEntryItemWithHttpInfo($id)
+    public function deleteTemplateItemWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteConfigurationEntryItemRequest($id);
+        $request = $this->deleteTemplateItemRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -156,18 +156,18 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation deleteConfigurationEntryItemAsync
+     * Operation deleteTemplateItemAsync
      *
-     * Removes the ConfigurationEntry resource.
+     * Removes the Template resource.
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteConfigurationEntryItemAsync($id)
+    public function deleteTemplateItemAsync($id)
     {
-        return $this->deleteConfigurationEntryItemAsyncWithHttpInfo($id)
+        return $this->deleteTemplateItemAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -176,19 +176,19 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation deleteConfigurationEntryItemAsyncWithHttpInfo
+     * Operation deleteTemplateItemAsyncWithHttpInfo
      *
-     * Removes the ConfigurationEntry resource.
+     * Removes the Template resource.
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteConfigurationEntryItemAsyncWithHttpInfo($id)
+    public function deleteTemplateItemAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteConfigurationEntryItemRequest($id);
+        $request = $this->deleteTemplateItemRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -214,23 +214,23 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Create request for operation 'deleteConfigurationEntryItem'
+     * Create request for operation 'deleteTemplateItem'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteConfigurationEntryItemRequest($id)
+    protected function deleteTemplateItemRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteConfigurationEntryItem'
+                'Missing the required parameter $id when calling deleteTemplateItem'
             );
         }
 
-        $resourcePath = '/renderer/configuration_entries/{id}';
+        $resourcePath = '/renderer/templates/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -317,45 +317,61 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryCollection
+     * Operation getTemplateCollection
      *
-     * Retrieves the collection of ConfigurationEntry resources.
+     * Retrieves the collection of Template resources.
      *
-     * @param  string $key key (optional)
-     * @param  string $sub_key sub_key (optional)
-     * @param  string $value value (optional)
-     * @param  string $application_id application_id (optional)
+     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  string $custom_data custom_data (optional)
+     * @param  string $file_name file_name (optional)
+     * @param  string $file_type file_type (optional)
+     * @param  string $created_at_before created_at_before (optional)
+     * @param  string $created_at_strictly_before created_at_strictly_before (optional)
+     * @param  string $created_at_after created_at_after (optional)
+     * @param  string $created_at_strictly_after created_at_strictly_after (optional)
+     * @param  string $updated_at_before updated_at_before (optional)
+     * @param  string $updated_at_strictly_before updated_at_strictly_before (optional)
+     * @param  string $updated_at_after updated_at_after (optional)
+     * @param  string $updated_at_strictly_after updated_at_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RendererService\Model\InlineResponse200
+     * @return \VentureLeap\RendererService\Model\InlineResponse2002
      */
-    public function getConfigurationEntryCollection($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
+    public function getTemplateCollection($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        list($response) = $this->getConfigurationEntryCollectionWithHttpInfo($key, $sub_key, $value, $application_id, $page);
+        list($response) = $this->getTemplateCollectionWithHttpInfo($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
         return $response;
     }
 
     /**
-     * Operation getConfigurationEntryCollectionWithHttpInfo
+     * Operation getTemplateCollectionWithHttpInfo
      *
-     * Retrieves the collection of ConfigurationEntry resources.
+     * Retrieves the collection of Template resources.
      *
-     * @param  string $key (optional)
-     * @param  string $sub_key (optional)
-     * @param  string $value (optional)
-     * @param  string $application_id (optional)
+     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  string $custom_data (optional)
+     * @param  string $file_name (optional)
+     * @param  string $file_type (optional)
+     * @param  string $created_at_before (optional)
+     * @param  string $created_at_strictly_before (optional)
+     * @param  string $created_at_after (optional)
+     * @param  string $created_at_strictly_after (optional)
+     * @param  string $updated_at_before (optional)
+     * @param  string $updated_at_strictly_before (optional)
+     * @param  string $updated_at_after (optional)
+     * @param  string $updated_at_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RendererService\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RendererService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getConfigurationEntryCollectionWithHttpInfo($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
+    public function getTemplateCollectionWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        $returnType = '\VentureLeap\RendererService\Model\InlineResponse200';
-        $request = $this->getConfigurationEntryCollectionRequest($key, $sub_key, $value, $application_id, $page);
+        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
+        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -406,7 +422,7 @@ class ConfigurationEntryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RendererService\Model\InlineResponse200',
+                        '\VentureLeap\RendererService\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -417,22 +433,30 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryCollectionAsync
+     * Operation getTemplateCollectionAsync
      *
-     * Retrieves the collection of ConfigurationEntry resources.
+     * Retrieves the collection of Template resources.
      *
-     * @param  string $key (optional)
-     * @param  string $sub_key (optional)
-     * @param  string $value (optional)
-     * @param  string $application_id (optional)
+     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  string $custom_data (optional)
+     * @param  string $file_name (optional)
+     * @param  string $file_type (optional)
+     * @param  string $created_at_before (optional)
+     * @param  string $created_at_strictly_before (optional)
+     * @param  string $created_at_after (optional)
+     * @param  string $created_at_strictly_after (optional)
+     * @param  string $updated_at_before (optional)
+     * @param  string $updated_at_strictly_before (optional)
+     * @param  string $updated_at_after (optional)
+     * @param  string $updated_at_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getConfigurationEntryCollectionAsync($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
+    public function getTemplateCollectionAsync($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        return $this->getConfigurationEntryCollectionAsyncWithHttpInfo($key, $sub_key, $value, $application_id, $page)
+        return $this->getTemplateCollectionAsyncWithHttpInfo($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -441,23 +465,31 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryCollectionAsyncWithHttpInfo
+     * Operation getTemplateCollectionAsyncWithHttpInfo
      *
-     * Retrieves the collection of ConfigurationEntry resources.
+     * Retrieves the collection of Template resources.
      *
-     * @param  string $key (optional)
-     * @param  string $sub_key (optional)
-     * @param  string $value (optional)
-     * @param  string $application_id (optional)
+     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  string $custom_data (optional)
+     * @param  string $file_name (optional)
+     * @param  string $file_type (optional)
+     * @param  string $created_at_before (optional)
+     * @param  string $created_at_strictly_before (optional)
+     * @param  string $created_at_after (optional)
+     * @param  string $created_at_strictly_after (optional)
+     * @param  string $updated_at_before (optional)
+     * @param  string $updated_at_strictly_before (optional)
+     * @param  string $updated_at_after (optional)
+     * @param  string $updated_at_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getConfigurationEntryCollectionAsyncWithHttpInfo($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
+    public function getTemplateCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        $returnType = '\VentureLeap\RendererService\Model\InlineResponse200';
-        $request = $this->getConfigurationEntryCollectionRequest($key, $sub_key, $value, $application_id, $page);
+        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
+        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -497,21 +529,29 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Create request for operation 'getConfigurationEntryCollection'
+     * Create request for operation 'getTemplateCollection'
      *
-     * @param  string $key (optional)
-     * @param  string $sub_key (optional)
-     * @param  string $value (optional)
-     * @param  string $application_id (optional)
+     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  string $custom_data (optional)
+     * @param  string $file_name (optional)
+     * @param  string $file_type (optional)
+     * @param  string $created_at_before (optional)
+     * @param  string $created_at_strictly_before (optional)
+     * @param  string $created_at_after (optional)
+     * @param  string $created_at_strictly_after (optional)
+     * @param  string $updated_at_before (optional)
+     * @param  string $updated_at_strictly_before (optional)
+     * @param  string $updated_at_after (optional)
+     * @param  string $updated_at_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getConfigurationEntryCollectionRequest($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
+    protected function getTemplateCollectionRequest($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
 
-        $resourcePath = '/renderer/configuration_entries';
+        $resourcePath = '/renderer/templates';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -519,20 +559,55 @@ class ConfigurationEntryApi
         $multipart = false;
 
         // query params
-        if ($key !== null) {
-            $queryParams['key'] = ObjectSerializer::toQueryValue($key);
+        if (is_array($properties)) {
+            $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
+        }
+        if ($properties !== null) {
+            $queryParams['properties[]'] = ObjectSerializer::toQueryValue($properties);
         }
         // query params
-        if ($sub_key !== null) {
-            $queryParams['subKey'] = ObjectSerializer::toQueryValue($sub_key);
+        if ($custom_data !== null) {
+            $queryParams['customData'] = ObjectSerializer::toQueryValue($custom_data);
         }
         // query params
-        if ($value !== null) {
-            $queryParams['value'] = ObjectSerializer::toQueryValue($value);
+        if ($file_name !== null) {
+            $queryParams['fileName'] = ObjectSerializer::toQueryValue($file_name);
         }
         // query params
-        if ($application_id !== null) {
-            $queryParams['applicationId'] = ObjectSerializer::toQueryValue($application_id);
+        if ($file_type !== null) {
+            $queryParams['fileType'] = ObjectSerializer::toQueryValue($file_type);
+        }
+        // query params
+        if ($created_at_before !== null) {
+            $queryParams['createdAt[before]'] = ObjectSerializer::toQueryValue($created_at_before);
+        }
+        // query params
+        if ($created_at_strictly_before !== null) {
+            $queryParams['createdAt[strictly_before]'] = ObjectSerializer::toQueryValue($created_at_strictly_before);
+        }
+        // query params
+        if ($created_at_after !== null) {
+            $queryParams['createdAt[after]'] = ObjectSerializer::toQueryValue($created_at_after);
+        }
+        // query params
+        if ($created_at_strictly_after !== null) {
+            $queryParams['createdAt[strictly_after]'] = ObjectSerializer::toQueryValue($created_at_strictly_after);
+        }
+        // query params
+        if ($updated_at_before !== null) {
+            $queryParams['updatedAt[before]'] = ObjectSerializer::toQueryValue($updated_at_before);
+        }
+        // query params
+        if ($updated_at_strictly_before !== null) {
+            $queryParams['updatedAt[strictly_before]'] = ObjectSerializer::toQueryValue($updated_at_strictly_before);
+        }
+        // query params
+        if ($updated_at_after !== null) {
+            $queryParams['updatedAt[after]'] = ObjectSerializer::toQueryValue($updated_at_after);
+        }
+        // query params
+        if ($updated_at_strictly_after !== null) {
+            $queryParams['updatedAt[strictly_after]'] = ObjectSerializer::toQueryValue($updated_at_strictly_after);
         }
         // query params
         if ($page !== null) {
@@ -610,37 +685,37 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryItem
+     * Operation getTemplateItem
      *
-     * Retrieves a ConfigurationEntry resource.
+     * Retrieves a Template resource.
      *
      * @param  string $id id (required)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead
+     * @return \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead
      */
-    public function getConfigurationEntryItem($id)
+    public function getTemplateItem($id)
     {
-        list($response) = $this->getConfigurationEntryItemWithHttpInfo($id);
+        list($response) = $this->getTemplateItemWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation getConfigurationEntryItemWithHttpInfo
+     * Operation getTemplateItemWithHttpInfo
      *
-     * Retrieves a ConfigurationEntry resource.
+     * Retrieves a Template resource.
      *
      * @param  string $id (required)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getConfigurationEntryItemWithHttpInfo($id)
+    public function getTemplateItemWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->getConfigurationEntryItemRequest($id);
+        $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
+        $request = $this->getTemplateItemRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -691,7 +766,7 @@ class ConfigurationEntryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead',
+                        '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -702,18 +777,18 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryItemAsync
+     * Operation getTemplateItemAsync
      *
-     * Retrieves a ConfigurationEntry resource.
+     * Retrieves a Template resource.
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getConfigurationEntryItemAsync($id)
+    public function getTemplateItemAsync($id)
     {
-        return $this->getConfigurationEntryItemAsyncWithHttpInfo($id)
+        return $this->getTemplateItemAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -722,19 +797,19 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation getConfigurationEntryItemAsyncWithHttpInfo
+     * Operation getTemplateItemAsyncWithHttpInfo
      *
-     * Retrieves a ConfigurationEntry resource.
+     * Retrieves a Template resource.
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getConfigurationEntryItemAsyncWithHttpInfo($id)
+    public function getTemplateItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->getConfigurationEntryItemRequest($id);
+        $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
+        $request = $this->getTemplateItemRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -774,23 +849,23 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Create request for operation 'getConfigurationEntryItem'
+     * Create request for operation 'getTemplateItem'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getConfigurationEntryItemRequest($id)
+    protected function getTemplateItemRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getConfigurationEntryItem'
+                'Missing the required parameter $id when calling getTemplateItem'
             );
         }
 
-        $resourcePath = '/renderer/configuration_entries/{id}';
+        $resourcePath = '/renderer/templates/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -877,37 +952,39 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation postConfigurationEntryCollection
+     * Operation postTemplateCollection
      *
-     * Creates a ConfigurationEntry resource.
+     * Creates a Template resource.
      *
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
+     * @param  string $file file (optional)
+     * @param  string $original_file_name original_file_name (optional)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead
+     * @return \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead
      */
-    public function postConfigurationEntryCollection($body = null)
+    public function postTemplateCollection($file = null, $original_file_name = null)
     {
-        list($response) = $this->postConfigurationEntryCollectionWithHttpInfo($body);
+        list($response) = $this->postTemplateCollectionWithHttpInfo($file, $original_file_name);
         return $response;
     }
 
     /**
-     * Operation postConfigurationEntryCollectionWithHttpInfo
+     * Operation postTemplateCollectionWithHttpInfo
      *
-     * Creates a ConfigurationEntry resource.
+     * Creates a Template resource.
      *
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
+     * @param  string $file (optional)
+     * @param  string $original_file_name (optional)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postConfigurationEntryCollectionWithHttpInfo($body = null)
+    public function postTemplateCollectionWithHttpInfo($file = null, $original_file_name = null)
     {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->postConfigurationEntryCollectionRequest($body);
+        $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
+        $request = $this->postTemplateCollectionRequest($file, $original_file_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -958,7 +1035,7 @@ class ConfigurationEntryApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead',
+                        '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -969,18 +1046,19 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation postConfigurationEntryCollectionAsync
+     * Operation postTemplateCollectionAsync
      *
-     * Creates a ConfigurationEntry resource.
+     * Creates a Template resource.
      *
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
+     * @param  string $file (optional)
+     * @param  string $original_file_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postConfigurationEntryCollectionAsync($body = null)
+    public function postTemplateCollectionAsync($file = null, $original_file_name = null)
     {
-        return $this->postConfigurationEntryCollectionAsyncWithHttpInfo($body)
+        return $this->postTemplateCollectionAsyncWithHttpInfo($file, $original_file_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -989,19 +1067,20 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Operation postConfigurationEntryCollectionAsyncWithHttpInfo
+     * Operation postTemplateCollectionAsyncWithHttpInfo
      *
-     * Creates a ConfigurationEntry resource.
+     * Creates a Template resource.
      *
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
+     * @param  string $file (optional)
+     * @param  string $original_file_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postConfigurationEntryCollectionAsyncWithHttpInfo($body = null)
+    public function postTemplateCollectionAsyncWithHttpInfo($file = null, $original_file_name = null)
     {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->postConfigurationEntryCollectionRequest($body);
+        $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
+        $request = $this->postTemplateCollectionRequest($file, $original_file_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1041,17 +1120,18 @@ class ConfigurationEntryApi
     }
 
     /**
-     * Create request for operation 'postConfigurationEntryCollection'
+     * Create request for operation 'postTemplateCollection'
      *
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
+     * @param  string $file (optional)
+     * @param  string $original_file_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postConfigurationEntryCollectionRequest($body = null)
+    protected function postTemplateCollectionRequest($file = null, $original_file_name = null)
     {
 
-        $resourcePath = '/renderer/configuration_entries';
+        $resourcePath = '/renderer/templates';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1060,11 +1140,17 @@ class ConfigurationEntryApi
 
 
 
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            $formParams['file'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+        }
+        // form params
+        if ($original_file_name !== null) {
+            $formParams['originalFileName'] = ObjectSerializer::toFormValue($original_file_name);
+        }
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1073,7 +1159,7 @@ class ConfigurationEntryApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/ld+json'],
-                ['application/ld+json']
+                ['multipart/form-data']
             );
         }
 
@@ -1126,281 +1212,6 @@ class ConfigurationEntryApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation putConfigurationEntryItem
-     *
-     * Replaces the ConfigurationEntry resource.
-     *
-     * @param  string $id id (required)
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
-     *
-     * @throws \VentureLeap\RendererService\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead
-     */
-    public function putConfigurationEntryItem($id, $body = null)
-    {
-        list($response) = $this->putConfigurationEntryItemWithHttpInfo($id, $body);
-        return $response;
-    }
-
-    /**
-     * Operation putConfigurationEntryItemWithHttpInfo
-     *
-     * Replaces the ConfigurationEntry resource.
-     *
-     * @param  string $id (required)
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
-     *
-     * @throws \VentureLeap\RendererService\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function putConfigurationEntryItemWithHttpInfo($id, $body = null)
-    {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->putConfigurationEntryItemRequest($id, $body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation putConfigurationEntryItemAsync
-     *
-     * Replaces the ConfigurationEntry resource.
-     *
-     * @param  string $id (required)
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function putConfigurationEntryItemAsync($id, $body = null)
-    {
-        return $this->putConfigurationEntryItemAsyncWithHttpInfo($id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation putConfigurationEntryItemAsyncWithHttpInfo
-     *
-     * Replaces the ConfigurationEntry resource.
-     *
-     * @param  string $id (required)
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function putConfigurationEntryItemAsyncWithHttpInfo($id, $body = null)
-    {
-        $returnType = '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead';
-        $request = $this->putConfigurationEntryItemRequest($id, $body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'putConfigurationEntryItem'
-     *
-     * @param  string $id (required)
-     * @param  \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function putConfigurationEntryItemRequest($id, $body = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling putConfigurationEntryItem'
-            );
-        }
-
-        $resourcePath = '/renderer/configuration_entries/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/ld+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/ld+json'],
-                ['application/ld+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

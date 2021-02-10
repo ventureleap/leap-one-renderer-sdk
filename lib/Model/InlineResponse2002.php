@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse200
+ * InlineResponse2002
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RendererService\ObjectSerializer;
 
 /**
- * InlineResponse200 Class Doc Comment
+ * InlineResponse2002 Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RendererService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse200 implements ModelInterface, ArrayAccess
+class InlineResponse2002 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200';
+    protected static $swaggerModelName = 'inline_response_200_2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hydramember' => '\VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[]',
+        'hydramember' => '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead[]',
 'hydratotal_items' => 'int',
 'hydraview' => '\VentureLeap\RendererService\Model\InlineResponse200Hydraview',
 'hydrasearch' => '\VentureLeap\RendererService\Model\InlineResponse200Hydrasearch'    ];
@@ -220,7 +220,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Gets hydramember
      *
-     * @return \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[]
+     * @return \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead[]
      */
     public function getHydramember()
     {
@@ -230,7 +230,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Sets hydramember
      *
-     * @param \VentureLeap\RendererService\Model\ConfigurationEntryJsonldConfigurationRead[] $hydramember hydramember
+     * @param \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead[] $hydramember hydramember
      *
      * @return $this
      */

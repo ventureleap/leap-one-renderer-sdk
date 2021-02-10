@@ -173,15 +173,30 @@ Class | Method | HTTP request | Description
 *ConfigurationEntryApi* | [**getConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#getconfigurationentryitem) | **GET** /renderer/configuration_entries/{id} | Retrieves a ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**postConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#postconfigurationentrycollection) | **POST** /renderer/configuration_entries | Creates a ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**putConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#putconfigurationentryitem) | **PUT** /renderer/configuration_entries/{id} | Replaces the ConfigurationEntry resource.
+*RenderApi* | [**deleteRenderItem**](docs/Api/RenderApi.md#deleterenderitem) | **DELETE** /renderer/renders/{id} | Removes the Render resource.
+*RenderApi* | [**getRenderCollection**](docs/Api/RenderApi.md#getrendercollection) | **GET** /renderer/renders | Retrieves the collection of Render resources.
+*RenderApi* | [**getRenderItem**](docs/Api/RenderApi.md#getrenderitem) | **GET** /renderer/renders/{id} | Retrieves a Render resource.
+*RenderApi* | [**postRenderCollection**](docs/Api/RenderApi.md#postrendercollection) | **POST** /renderer/renders | Creates a Render resource.
+*RenderApi* | [**putRenderItem**](docs/Api/RenderApi.md#putrenderitem) | **PUT** /renderer/renders/{id} | Replaces the Render resource.
+*TemplateApi* | [**deleteTemplateItem**](docs/Api/TemplateApi.md#deletetemplateitem) | **DELETE** /renderer/templates/{id} | Removes the Template resource.
+*TemplateApi* | [**getTemplateCollection**](docs/Api/TemplateApi.md#gettemplatecollection) | **GET** /renderer/templates | Retrieves the collection of Template resources.
+*TemplateApi* | [**getTemplateItem**](docs/Api/TemplateApi.md#gettemplateitem) | **GET** /renderer/templates/{id} | Retrieves a Template resource.
+*TemplateApi* | [**postTemplateCollection**](docs/Api/TemplateApi.md#posttemplatecollection) | **POST** /renderer/templates | Creates a Template resource.
 
 ## Documentation For Models
 
+ - [Body](docs/Model/Body.md)
  - [ConfigurationEntryJsonldConfigurationRead](docs/Model/ConfigurationEntryJsonldConfigurationRead.md)
  - [ConfigurationEntryJsonldConfigurationWrite](docs/Model/ConfigurationEntryJsonldConfigurationWrite.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
+ - [InlineResponse2001](docs/Model/InlineResponse2001.md)
+ - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse200Hydrasearch](docs/Model/InlineResponse200Hydrasearch.md)
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
+ - [RenderJsonldRenderRead](docs/Model/RenderJsonldRenderRead.md)
+ - [RenderJsonldRenderWrite](docs/Model/RenderJsonldRenderWrite.md)
+ - [TemplateJsonldTemplateRead](docs/Model/TemplateJsonldTemplateRead.md)
 
 ## Documentation For Authorization
 

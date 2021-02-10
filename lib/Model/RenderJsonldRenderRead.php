@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse200Hydraview
+ * RenderJsonldRenderRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RendererService\ObjectSerializer;
 
 /**
- * InlineResponse200Hydraview Class Doc Comment
+ * RenderJsonldRenderRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RendererService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
+class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_hydraview';
+    protected static $swaggerModelName = 'Render:jsonld-RenderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
+        'context' => 'string',
+'id' => 'string',
 'type' => 'string',
-'hydrafirst' => 'string',
-'hydralast' => 'string',
-'hydranext' => 'string'    ];
+'file_url' => 'string',
+'file_name' => 'string',
+'template' => 'string',
+'language' => 'string',
+'uuid' => 'string',
+'application_id' => 'string',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +75,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'iri-reference',
+        'context' => null,
+'id' => null,
 'type' => null,
-'hydrafirst' => 'iri-reference',
-'hydralast' => 'iri-reference',
-'hydranext' => 'iri-reference'    ];
+'file_url' => null,
+'file_name' => null,
+'template' => 'iri-reference',
+'language' => null,
+'uuid' => null,
+'application_id' => null,
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +115,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => '@id',
+        'context' => '@context',
+'id' => '@id',
 'type' => '@type',
-'hydrafirst' => 'hydra:first',
-'hydralast' => 'hydra:last',
-'hydranext' => 'hydra:next'    ];
+'file_url' => 'fileUrl',
+'file_name' => 'fileName',
+'template' => 'template',
+'language' => 'language',
+'uuid' => 'uuid',
+'application_id' => 'applicationId',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +134,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'context' => 'setContext',
+'id' => 'setId',
 'type' => 'setType',
-'hydrafirst' => 'setHydrafirst',
-'hydralast' => 'setHydralast',
-'hydranext' => 'setHydranext'    ];
+'file_url' => 'setFileUrl',
+'file_name' => 'setFileName',
+'template' => 'setTemplate',
+'language' => 'setLanguage',
+'uuid' => 'setUuid',
+'application_id' => 'setApplicationId',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +153,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'context' => 'getContext',
+'id' => 'getId',
 'type' => 'getType',
-'hydrafirst' => 'getHydrafirst',
-'hydralast' => 'getHydralast',
-'hydranext' => 'getHydranext'    ];
+'file_url' => 'getFileUrl',
+'file_name' => 'getFileName',
+'template' => 'getTemplate',
+'language' => 'getLanguage',
+'uuid' => 'getUuid',
+'application_id' => 'getApplicationId',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +224,18 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['hydrafirst'] = isset($data['hydrafirst']) ? $data['hydrafirst'] : null;
-        $this->container['hydralast'] = isset($data['hydralast']) ? $data['hydralast'] : null;
-        $this->container['hydranext'] = isset($data['hydranext']) ? $data['hydranext'] : null;
+        $this->container['file_url'] = isset($data['file_url']) ? $data['file_url'] : null;
+        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -219,6 +261,30 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->container['context'];
+    }
+
+    /**
+     * Sets context
+     *
+     * @param string $context context
+     *
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->container['context'] = $context;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -269,73 +335,217 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets hydrafirst
+     * Gets file_url
      *
      * @return string
      */
-    public function getHydrafirst()
+    public function getFileUrl()
     {
-        return $this->container['hydrafirst'];
+        return $this->container['file_url'];
     }
 
     /**
-     * Sets hydrafirst
+     * Sets file_url
      *
-     * @param string $hydrafirst hydrafirst
+     * @param string $file_url file_url
      *
      * @return $this
      */
-    public function setHydrafirst($hydrafirst)
+    public function setFileUrl($file_url)
     {
-        $this->container['hydrafirst'] = $hydrafirst;
+        $this->container['file_url'] = $file_url;
 
         return $this;
     }
 
     /**
-     * Gets hydralast
+     * Gets file_name
      *
      * @return string
      */
-    public function getHydralast()
+    public function getFileName()
     {
-        return $this->container['hydralast'];
+        return $this->container['file_name'];
     }
 
     /**
-     * Sets hydralast
+     * Sets file_name
      *
-     * @param string $hydralast hydralast
+     * @param string $file_name file_name
      *
      * @return $this
      */
-    public function setHydralast($hydralast)
+    public function setFileName($file_name)
     {
-        $this->container['hydralast'] = $hydralast;
+        $this->container['file_name'] = $file_name;
 
         return $this;
     }
 
     /**
-     * Gets hydranext
+     * Gets template
      *
      * @return string
      */
-    public function getHydranext()
+    public function getTemplate()
     {
-        return $this->container['hydranext'];
+        return $this->container['template'];
     }
 
     /**
-     * Sets hydranext
+     * Sets template
      *
-     * @param string $hydranext hydranext
+     * @param string $template template
      *
      * @return $this
      */
-    public function setHydranext($hydranext)
+    public function setTemplate($template)
     {
-        $this->container['hydranext'] = $hydranext;
+        $this->container['template'] = $template;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string $language language
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }
