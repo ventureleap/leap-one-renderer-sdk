@@ -60,7 +60,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 'id' => 'string',
 'type' => 'string',
 'file_name' => 'string',
-'original_file_name' => 'string',
+'template_key' => 'string',
 'file_type' => 'string',
 'file_size' => 'float',
 'content_url' => 'string',
@@ -80,7 +80,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 'id' => null,
 'type' => null,
 'file_name' => null,
-'original_file_name' => null,
+'template_key' => null,
 'file_type' => null,
 'file_size' => null,
 'content_url' => null,
@@ -121,7 +121,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 'id' => '@id',
 'type' => '@type',
 'file_name' => 'fileName',
-'original_file_name' => 'originalFileName',
+'template_key' => 'templateKey',
 'file_type' => 'fileType',
 'file_size' => 'fileSize',
 'content_url' => 'contentUrl',
@@ -141,7 +141,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 'id' => 'setId',
 'type' => 'setType',
 'file_name' => 'setFileName',
-'original_file_name' => 'setOriginalFileName',
+'template_key' => 'setTemplateKey',
 'file_type' => 'setFileType',
 'file_size' => 'setFileSize',
 'content_url' => 'setContentUrl',
@@ -161,7 +161,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
 'id' => 'getId',
 'type' => 'getType',
 'file_name' => 'getFileName',
-'original_file_name' => 'getOriginalFileName',
+'template_key' => 'getTemplateKey',
 'file_type' => 'getFileType',
 'file_size' => 'getFileSize',
 'content_url' => 'getContentUrl',
@@ -233,7 +233,7 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
-        $this->container['original_file_name'] = isset($data['original_file_name']) ? $data['original_file_name'] : null;
+        $this->container['template_key'] = isset($data['template_key']) ? $data['template_key'] : null;
         $this->container['file_type'] = isset($data['file_type']) ? $data['file_type'] : null;
         $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
         $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
@@ -365,25 +365,25 @@ class TemplateJsonldTemplateRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets original_file_name
+     * Gets template_key
      *
      * @return string
      */
-    public function getOriginalFileName()
+    public function getTemplateKey()
     {
-        return $this->container['original_file_name'];
+        return $this->container['template_key'];
     }
 
     /**
-     * Sets original_file_name
+     * Sets template_key
      *
-     * @param string $original_file_name original_file_name
+     * @param string $template_key template_key
      *
      * @return $this
      */
-    public function setOriginalFileName($original_file_name)
+    public function setTemplateKey($template_key)
     {
-        $this->container['original_file_name'] = $original_file_name;
+        $this->container['template_key'] = $template_key;
 
         return $this;
     }

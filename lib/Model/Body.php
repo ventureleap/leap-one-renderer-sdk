@@ -57,7 +57,7 @@ class Body implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'file' => 'string',
-'original_file_name' => 'string'    ];
+'template_key' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,7 +66,7 @@ class Body implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'file' => 'binary',
-'original_file_name' => 'string'    ];
+'template_key' => 'string'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,7 +96,7 @@ class Body implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'file' => 'file',
-'original_file_name' => 'originalFileName'    ];
+'template_key' => 'templateKey'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,7 +105,7 @@ class Body implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'file' => 'setFile',
-'original_file_name' => 'setOriginalFileName'    ];
+'template_key' => 'setTemplateKey'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,7 +114,7 @@ class Body implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'file' => 'getFile',
-'original_file_name' => 'getOriginalFileName'    ];
+'template_key' => 'getTemplateKey'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,7 +175,7 @@ class Body implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['file'] = isset($data['file']) ? $data['file'] : null;
-        $this->container['original_file_name'] = isset($data['original_file_name']) ? $data['original_file_name'] : null;
+        $this->container['template_key'] = isset($data['template_key']) ? $data['template_key'] : null;
     }
 
     /**
@@ -227,25 +227,25 @@ class Body implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets original_file_name
+     * Gets template_key
      *
      * @return string
      */
-    public function getOriginalFileName()
+    public function getTemplateKey()
     {
-        return $this->container['original_file_name'];
+        return $this->container['template_key'];
     }
 
     /**
-     * Sets original_file_name
+     * Sets template_key
      *
-     * @param string $original_file_name original_file_name
+     * @param string $template_key template_key
      *
      * @return $this
      */
-    public function setOriginalFileName($original_file_name)
+    public function setTemplateKey($template_key)
     {
-        $this->container['original_file_name'] = $original_file_name;
+        $this->container['template_key'] = $template_key;
 
         return $this;
     }

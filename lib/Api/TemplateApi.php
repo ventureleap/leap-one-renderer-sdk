@@ -325,6 +325,7 @@ class TemplateApi
      * @param  string $custom_data custom_data (optional)
      * @param  string $file_name file_name (optional)
      * @param  string $file_type file_type (optional)
+     * @param  string $template_key template_key (optional)
      * @param  string $created_at_before created_at_before (optional)
      * @param  string $created_at_strictly_before created_at_strictly_before (optional)
      * @param  string $created_at_after created_at_after (optional)
@@ -339,9 +340,9 @@ class TemplateApi
      * @throws \InvalidArgumentException
      * @return \VentureLeap\RendererService\Model\InlineResponse2002
      */
-    public function getTemplateCollection($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
+    public function getTemplateCollection($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        list($response) = $this->getTemplateCollectionWithHttpInfo($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
+        list($response) = $this->getTemplateCollectionWithHttpInfo($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
         return $response;
     }
 
@@ -354,6 +355,7 @@ class TemplateApi
      * @param  string $custom_data (optional)
      * @param  string $file_name (optional)
      * @param  string $file_type (optional)
+     * @param  string $template_key (optional)
      * @param  string $created_at_before (optional)
      * @param  string $created_at_strictly_before (optional)
      * @param  string $created_at_after (optional)
@@ -368,10 +370,10 @@ class TemplateApi
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\RendererService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTemplateCollectionWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
+    public function getTemplateCollectionWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
         $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
-        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
+        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -441,6 +443,7 @@ class TemplateApi
      * @param  string $custom_data (optional)
      * @param  string $file_name (optional)
      * @param  string $file_type (optional)
+     * @param  string $template_key (optional)
      * @param  string $created_at_before (optional)
      * @param  string $created_at_strictly_before (optional)
      * @param  string $created_at_after (optional)
@@ -454,9 +457,9 @@ class TemplateApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTemplateCollectionAsync($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
+    public function getTemplateCollectionAsync($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        return $this->getTemplateCollectionAsyncWithHttpInfo($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
+        return $this->getTemplateCollectionAsyncWithHttpInfo($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -473,6 +476,7 @@ class TemplateApi
      * @param  string $custom_data (optional)
      * @param  string $file_name (optional)
      * @param  string $file_type (optional)
+     * @param  string $template_key (optional)
      * @param  string $created_at_before (optional)
      * @param  string $created_at_strictly_before (optional)
      * @param  string $created_at_after (optional)
@@ -486,10 +490,10 @@ class TemplateApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTemplateCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
+    public function getTemplateCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
         $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
-        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
+        $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -535,6 +539,7 @@ class TemplateApi
      * @param  string $custom_data (optional)
      * @param  string $file_name (optional)
      * @param  string $file_type (optional)
+     * @param  string $template_key (optional)
      * @param  string $created_at_before (optional)
      * @param  string $created_at_strictly_before (optional)
      * @param  string $created_at_after (optional)
@@ -548,7 +553,7 @@ class TemplateApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTemplateCollectionRequest($properties = null, $custom_data = null, $file_name = null, $file_type = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
+    protected function getTemplateCollectionRequest($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
 
         $resourcePath = '/renderer/templates';
@@ -576,6 +581,10 @@ class TemplateApi
         // query params
         if ($file_type !== null) {
             $queryParams['fileType'] = ObjectSerializer::toQueryValue($file_type, null);
+        }
+        // query params
+        if ($template_key !== null) {
+            $queryParams['templateKey'] = ObjectSerializer::toQueryValue($template_key, null);
         }
         // query params
         if ($created_at_before !== null) {
@@ -957,15 +966,15 @@ class TemplateApi
      * Creates a Template resource.
      *
      * @param  string $file file (optional)
-     * @param  string $original_file_name original_file_name (optional)
+     * @param  string $template_key template_key (optional)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead
      */
-    public function postTemplateCollection($file = null, $original_file_name = null)
+    public function postTemplateCollection($file = null, $template_key = null)
     {
-        list($response) = $this->postTemplateCollectionWithHttpInfo($file, $original_file_name);
+        list($response) = $this->postTemplateCollectionWithHttpInfo($file, $template_key);
         return $response;
     }
 
@@ -975,16 +984,16 @@ class TemplateApi
      * Creates a Template resource.
      *
      * @param  string $file (optional)
-     * @param  string $original_file_name (optional)
+     * @param  string $template_key (optional)
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTemplateCollectionWithHttpInfo($file = null, $original_file_name = null)
+    public function postTemplateCollectionWithHttpInfo($file = null, $template_key = null)
     {
         $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
-        $request = $this->postTemplateCollectionRequest($file, $original_file_name);
+        $request = $this->postTemplateCollectionRequest($file, $template_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1051,14 +1060,14 @@ class TemplateApi
      * Creates a Template resource.
      *
      * @param  string $file (optional)
-     * @param  string $original_file_name (optional)
+     * @param  string $template_key (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTemplateCollectionAsync($file = null, $original_file_name = null)
+    public function postTemplateCollectionAsync($file = null, $template_key = null)
     {
-        return $this->postTemplateCollectionAsyncWithHttpInfo($file, $original_file_name)
+        return $this->postTemplateCollectionAsyncWithHttpInfo($file, $template_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1072,15 +1081,15 @@ class TemplateApi
      * Creates a Template resource.
      *
      * @param  string $file (optional)
-     * @param  string $original_file_name (optional)
+     * @param  string $template_key (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTemplateCollectionAsyncWithHttpInfo($file = null, $original_file_name = null)
+    public function postTemplateCollectionAsyncWithHttpInfo($file = null, $template_key = null)
     {
         $returnType = '\VentureLeap\RendererService\Model\TemplateJsonldTemplateRead';
-        $request = $this->postTemplateCollectionRequest($file, $original_file_name);
+        $request = $this->postTemplateCollectionRequest($file, $template_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1123,12 +1132,12 @@ class TemplateApi
      * Create request for operation 'postTemplateCollection'
      *
      * @param  string $file (optional)
-     * @param  string $original_file_name (optional)
+     * @param  string $template_key (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postTemplateCollectionRequest($file = null, $original_file_name = null)
+    protected function postTemplateCollectionRequest($file = null, $template_key = null)
     {
 
         $resourcePath = '/renderer/templates';
@@ -1146,8 +1155,8 @@ class TemplateApi
             $formParams['file'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
         }
         // form params
-        if ($original_file_name !== null) {
-            $formParams['originalFileName'] = ObjectSerializer::toFormValue($original_file_name);
+        if ($template_key !== null) {
+            $formParams['templateKey'] = ObjectSerializer::toFormValue($template_key);
         }
         // body params
         $_tempBody = null;

@@ -104,9 +104,9 @@ class TemplateJsonldTemplateReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "original_file_name"
+     * Test attribute "template_key"
      */
-    public function testPropertyOriginalFileName()
+    public function testPropertyTemplateKey()
     {
     }
 

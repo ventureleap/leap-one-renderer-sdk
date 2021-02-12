@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTemplateCollection**
-> \VentureLeap\RendererService\Model\InlineResponse2002 getTemplateCollection($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
+> \VentureLeap\RendererService\Model\InlineResponse2002 getTemplateCollection($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
 
 Retrieves the collection of Template resources.
 
@@ -84,6 +84,7 @@ $properties = array("properties_example"); // string[] | Allows you to reduce th
 $custom_data = "custom_data_example"; // string | 
 $file_name = "file_name_example"; // string | 
 $file_type = "file_type_example"; // string | 
+$template_key = "template_key_example"; // string | 
 $created_at_before = "created_at_before_example"; // string | 
 $created_at_strictly_before = "created_at_strictly_before_example"; // string | 
 $created_at_after = "created_at_after_example"; // string | 
@@ -95,7 +96,7 @@ $updated_at_strictly_after = "updated_at_strictly_after_example"; // string |
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getTemplateCollection($properties, $custom_data, $file_name, $file_type, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
+    $result = $apiInstance->getTemplateCollection($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TemplateApi->getTemplateCollection: ', $e->getMessage(), PHP_EOL;
@@ -111,6 +112,7 @@ Name | Type | Description  | Notes
  **custom_data** | **string**|  | [optional]
  **file_name** | **string**|  | [optional]
  **file_type** | **string**|  | [optional]
+ **template_key** | **string**|  | [optional]
  **created_at_before** | **string**|  | [optional]
  **created_at_strictly_before** | **string**|  | [optional]
  **created_at_after** | **string**|  | [optional]
@@ -189,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postTemplateCollection**
-> \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead postTemplateCollection($file, $original_file_name)
+> \VentureLeap\RendererService\Model\TemplateJsonldTemplateRead postTemplateCollection($file, $template_key)
 
 Creates a Template resource.
 
@@ -209,10 +211,10 @@ $apiInstance = new VentureLeap\RendererService\Api\TemplateApi(
     $config
 );
 $file = "file_example"; // string | 
-$original_file_name = "original_file_name_example"; // string | 
+$template_key = "template_key_example"; // string | 
 
 try {
-    $result = $apiInstance->postTemplateCollection($file, $original_file_name);
+    $result = $apiInstance->postTemplateCollection($file, $template_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TemplateApi->postTemplateCollection: ', $e->getMessage(), PHP_EOL;
@@ -225,7 +227,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **string****string**|  | [optional]
- **original_file_name** | **string**|  | [optional]
+ **template_key** | **string**|  | [optional]
 
 ### Return type
 
