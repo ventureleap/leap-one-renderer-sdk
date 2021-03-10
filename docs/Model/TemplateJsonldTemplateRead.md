@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **file_name** | **string** |  | [optional] 
+**original_file_name** | **string** |  | [optional] 
 **template_key** | **string** |  | [optional] 
 **file_type** | **string** |  | [optional] 
 **file_size** | **float** |  | [optional] 
