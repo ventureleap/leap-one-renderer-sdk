@@ -97,6 +97,13 @@ class RenderJsonldRenderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "uuid"
+     */
+    public function testPropertyUuid()
+    {
+    }
+
+    /**
      * Test attribute "file_url"
      */
     public function testPropertyFileUrl()
@@ -107,6 +114,13 @@ class RenderJsonldRenderReadTest extends \PHPUnit_Framework_TestCase
      * Test attribute "file_name"
      */
     public function testPropertyFileName()
+    {
+    }
+
+    /**
+     * Test attribute "render_code"
+     */
+    public function testPropertyRenderCode()
     {
     }
 
@@ -125,20 +139,6 @@ class RenderJsonldRenderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "uuid"
-     */
-    public function testPropertyUuid()
-    {
-    }
-
-    /**
-     * Test attribute "application_id"
-     */
-    public function testPropertyApplicationId()
-    {
-    }
-
-    /**
      * Test attribute "created_at"
      */
     public function testPropertyCreatedAt()
@@ -146,9 +146,9 @@ class RenderJsonldRenderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "updated_at"
+     * Test attribute "application_id"
      */
-    public function testPropertyUpdatedAt()
+    public function testPropertyApplicationId()
     {
     }
 

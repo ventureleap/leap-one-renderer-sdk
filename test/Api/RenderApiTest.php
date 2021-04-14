@@ -71,52 +71,12 @@ class RenderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteRenderItem
-     *
-     * Removes the Render resource..
-     *
-     */
-    public function testDeleteRenderItem()
-    {
-    }
-
-    /**
-     * Test case for getRenderCollection
-     *
-     * Retrieves the collection of Render resources..
-     *
-     */
-    public function testGetRenderCollection()
-    {
-    }
-
-    /**
-     * Test case for getRenderItem
-     *
-     * Retrieves a Render resource..
-     *
-     */
-    public function testGetRenderItem()
-    {
-    }
-
-    /**
      * Test case for postRenderCollection
      *
      * Creates a Render resource..
      *
      */
     public function testPostRenderCollection()
-    {
-    }
-
-    /**
-     * Test case for putRenderItem
-     *
-     * Replaces the Render resource..
-     *
-     */
-    public function testPutRenderItem()
     {
     }
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **file_name** | **string** |  | [optional] 
-**template** | **string** |  | [optional] 
+**template** | **string** |  | 
 **language** | **string** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

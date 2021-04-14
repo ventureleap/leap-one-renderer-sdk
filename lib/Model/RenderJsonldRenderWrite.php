@@ -217,6 +217,9 @@ class RenderJsonldRenderWrite implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['template'] === null) {
+            $invalidProperties[] = "'template' can't be null";
+        }
         return $invalidProperties;
     }
 

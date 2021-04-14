@@ -338,7 +338,7 @@ class TemplateApi
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RendererService\Model\InlineResponse2002
+     * @return \VentureLeap\RendererService\Model\InlineResponse2001
      */
     public function getTemplateCollection($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
@@ -368,11 +368,11 @@ class TemplateApi
      *
      * @throws \VentureLeap\RendererService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RendererService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RendererService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTemplateCollectionWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
+        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2001';
         $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         try {
@@ -424,7 +424,7 @@ class TemplateApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RendererService\Model\InlineResponse2002',
+                        '\VentureLeap\RendererService\Model\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -492,7 +492,7 @@ class TemplateApi
      */
     public function getTemplateCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $file_name = null, $file_type = null, $template_key = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $page = '1')
     {
-        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2002';
+        $returnType = '\VentureLeap\RendererService\Model\InlineResponse2001';
         $request = $this->getTemplateCollectionRequest($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page);
 
         return $this->client

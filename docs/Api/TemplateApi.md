@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTemplateCollection**
-> \VentureLeap\RendererService\Model\InlineResponse2002 getTemplateCollection($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
+> \VentureLeap\RendererService\Model\InlineResponse2001 getTemplateCollection($properties, $custom_data, $file_name, $file_type, $template_key, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $page)
 
 Retrieves the collection of Template resources.
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RendererService\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\VentureLeap\RendererService\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

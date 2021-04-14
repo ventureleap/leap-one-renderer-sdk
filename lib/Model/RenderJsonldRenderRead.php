@@ -59,14 +59,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'uuid' => 'string',
 'file_url' => 'string',
 'file_name' => 'string',
+'render_code' => 'string',
 'template' => 'string',
 'language' => 'string',
-'uuid' => 'string',
-'application_id' => 'string',
 'created_at' => '\DateTime',
-'updated_at' => '\DateTime',
+'application_id' => 'string',
 'custom_data' => 'object'    ];
 
     /**
@@ -78,14 +78,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'uuid' => null,
 'file_url' => null,
 'file_name' => null,
+'render_code' => null,
 'template' => 'iri-reference',
 'language' => null,
-'uuid' => null,
-'application_id' => null,
 'created_at' => 'date-time',
-'updated_at' => 'date-time',
+'application_id' => null,
 'custom_data' => null    ];
 
     /**
@@ -118,14 +118,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'uuid' => 'uuid',
 'file_url' => 'fileUrl',
 'file_name' => 'fileName',
+'render_code' => 'renderCode',
 'template' => 'template',
 'language' => 'language',
-'uuid' => 'uuid',
-'application_id' => 'applicationId',
 'created_at' => 'createdAt',
-'updated_at' => 'updatedAt',
+'application_id' => 'applicationId',
 'custom_data' => 'customData'    ];
 
     /**
@@ -137,14 +137,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'uuid' => 'setUuid',
 'file_url' => 'setFileUrl',
 'file_name' => 'setFileName',
+'render_code' => 'setRenderCode',
 'template' => 'setTemplate',
 'language' => 'setLanguage',
-'uuid' => 'setUuid',
-'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
-'updated_at' => 'setUpdatedAt',
+'application_id' => 'setApplicationId',
 'custom_data' => 'setCustomData'    ];
 
     /**
@@ -156,14 +156,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'uuid' => 'getUuid',
 'file_url' => 'getFileUrl',
 'file_name' => 'getFileName',
+'render_code' => 'getRenderCode',
 'template' => 'getTemplate',
 'language' => 'getLanguage',
-'uuid' => 'getUuid',
-'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
-'updated_at' => 'getUpdatedAt',
+'application_id' => 'getApplicationId',
 'custom_data' => 'getCustomData'    ];
 
     /**
@@ -227,14 +227,14 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['file_url'] = isset($data['file_url']) ? $data['file_url'] : null;
         $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        $this->container['render_code'] = isset($data['render_code']) ? $data['render_code'] : null;
         $this->container['template'] = isset($data['template']) ? $data['template'] : null;
         $this->container['language'] = isset($data['language']) ? $data['language'] : null;
-        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
-        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
@@ -247,6 +247,9 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['template'] === null) {
+            $invalidProperties[] = "'template' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -335,6 +338,30 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
      * Gets file_url
      *
      * @return string
@@ -378,6 +405,30 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
     public function setFileName($file_name)
     {
         $this->container['file_name'] = $file_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets render_code
+     *
+     * @return string
+     */
+    public function getRenderCode()
+    {
+        return $this->container['render_code'];
+    }
+
+    /**
+     * Sets render_code
+     *
+     * @param string $render_code render_code
+     *
+     * @return $this
+     */
+    public function setRenderCode($render_code)
+    {
+        $this->container['render_code'] = $render_code;
 
         return $this;
     }
@@ -431,54 +482,6 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets uuid
-     *
-     * @return string
-     */
-    public function getUuid()
-    {
-        return $this->container['uuid'];
-    }
-
-    /**
-     * Sets uuid
-     *
-     * @param string $uuid uuid
-     *
-     * @return $this
-     */
-    public function setUuid($uuid)
-    {
-        $this->container['uuid'] = $uuid;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_id
-     *
-     * @return string
-     */
-    public function getApplicationId()
-    {
-        return $this->container['application_id'];
-    }
-
-    /**
-     * Sets application_id
-     *
-     * @param string $application_id application_id
-     *
-     * @return $this
-     */
-    public function setApplicationId($application_id)
-    {
-        $this->container['application_id'] = $application_id;
-
-        return $this;
-    }
-
-    /**
      * Gets created_at
      *
      * @return \DateTime
@@ -503,25 +506,25 @@ class RenderJsonldRenderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets updated_at
+     * Gets application_id
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getUpdatedAt()
+    public function getApplicationId()
     {
-        return $this->container['updated_at'];
+        return $this->container['application_id'];
     }
 
     /**
-     * Sets updated_at
+     * Sets application_id
      *
-     * @param \DateTime $updated_at updated_at
+     * @param string $application_id application_id
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setApplicationId($application_id)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }
